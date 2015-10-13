@@ -142,6 +142,12 @@ class Grid(object):
 
     def remove_bad_words(self):
         return True
+        
+    def show_words(self):
+    	word_list = []
+    	for word in self.words:
+    		word_list.append(word[0])
+    	return word_list
 
 def make_grid(stylep="standard", words=[], tries=100):
     # Parse and validate the style parameter.
@@ -184,4 +190,6 @@ if __name__ == '__main__':
         print grid.to_text()
         print
         print grid.used_to_text()
+        print
+        print '\n'.join(grid.show_words())
     grid.to_pdf("ws.pdf")
